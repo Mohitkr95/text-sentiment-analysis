@@ -1,0 +1,65 @@
+2025-05-30 00:54:36,349 - SentimentAnalysis - INFO - Starting Advanced Sentiment Analysis Pipeline
+2025-05-30 00:54:36,349 - SentimentAnalysis - INFO - ============================================================
+2025-05-30 00:54:36,349 - SentimentAnalysis - INFO - Loading and exploring dataset...
+2025-05-30 00:54:36,350 - SentimentAnalysis - INFO - Dataset loaded successfully: (1000, 2)
+2025-05-30 00:54:36,350 - SentimentAnalysis - INFO - Dataset Info:
+2025-05-30 00:54:36,350 - SentimentAnalysis - INFO -   Shape: (1000, 2)
+2025-05-30 00:54:36,350 - SentimentAnalysis - INFO -   Columns: ['Review', 'Liked']
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Missing values: {'Review': 0, 'Liked': 0}
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Class distribution: {1: 500, 0: 500}
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Class balance ratio: 1.000
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO - Sample reviews:
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Review 1: Wow... Loved this place....
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Sentiment: 1
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Review 2: Crust is not good....
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Sentiment: 0
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Review 3: Not tasty and the texture was just nasty....
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO -   Sentiment: 0
+2025-05-30 00:54:36,351 - SentimentAnalysis - INFO - Initializing text processor...
+2025-05-30 00:54:36,352 - TextProcessor - INFO - Downloading required NLTK data...
+2025-05-30 00:54:38,294 - SentimentAnalysis - INFO - Text statistics before processing: {'total_texts': 1000, 'total_words': 10894, 'average_words_per_text': 10.894, 'empty_texts': 0, 'empty_text_percentage': 0.0}
+2025-05-30 00:54:38,294 - TextProcessor - INFO - Processing corpus of 1000 texts...
+2025-05-30 00:54:38,821 - TextProcessor - INFO - Text processing completed!
+2025-05-30 00:54:38,821 - SentimentAnalysis - INFO - Text statistics after processing: {'total_texts': 1000, 'total_words': 5762, 'average_words_per_text': 5.762, 'empty_texts': 0, 'empty_text_percentage': 0.0}
+2025-05-30 00:54:38,821 - SentimentAnalysis - INFO - Initializing feature extractor...
+2025-05-30 00:54:38,823 - SentimentAnalysis - INFO - Data split - Train: 640, Val: 160, Test: 200
+2025-05-30 00:54:38,836 - SentimentAnalysis - INFO - Feature extraction completed: 677 features
+2025-05-30 00:54:38,836 - SentimentAnalysis - INFO - Initializing ensemble models...
+2025-05-30 00:54:48,521 - SentimentAnalysis - INFO - Individual model scores:
+2025-05-30 00:54:48,521 - SentimentAnalysis - INFO -   logistic_regression: 0.7722
+2025-05-30 00:54:48,521 - SentimentAnalysis - INFO -   random_forest: 0.7383
+2025-05-30 00:54:48,521 - SentimentAnalysis - INFO -   svm: 0.7516
+2025-05-30 00:54:48,521 - SentimentAnalysis - INFO -   multinomial_nb: 0.7595
+2025-05-30 00:54:48,521 - SentimentAnalysis - INFO -   knn: 0.5375
+2025-05-30 00:54:48,521 - SentimentAnalysis - INFO -   balanced_rf: 0.7742
+2025-05-30 00:54:48,521 - SentimentAnalysis - INFO -   balanced_bagging: 0.7183
+2025-05-30 00:54:52,667 - SentimentAnalysis - INFO - Ensemble model scores:
+2025-05-30 00:54:52,668 - SentimentAnalysis - INFO -   hard_voting: 0.7821
+2025-05-30 00:54:52,668 - SentimentAnalysis - INFO -   soft_voting: 0.7436
+2025-05-30 00:54:52,956 - SentimentAnalysis - INFO - Model rankings (by F1 score):
+2025-05-30 00:54:52,956 - SentimentAnalysis - INFO -   1. hard_voting: 0.7821
+2025-05-30 00:54:52,956 - SentimentAnalysis - INFO -   2. balanced_rf: 0.7742
+2025-05-30 00:54:52,956 - SentimentAnalysis - INFO -   3. logistic_regression: 0.7722
+2025-05-30 00:54:52,956 - SentimentAnalysis - INFO -   4. multinomial_nb: 0.7595
+2025-05-30 00:54:52,956 - SentimentAnalysis - INFO -   5. svm: 0.7516
+2025-05-30 00:54:52,956 - SentimentAnalysis - INFO -   6. soft_voting: 0.7436
+2025-05-30 00:54:52,956 - SentimentAnalysis - INFO -   7. random_forest: 0.7383
+2025-05-30 00:54:52,957 - SentimentAnalysis - INFO -   8. balanced_bagging: 0.7183
+2025-05-30 00:54:52,957 - SentimentAnalysis - INFO -   9. knn: 0.5375
+2025-05-30 00:54:52,957 - SentimentAnalysis - INFO - Performing final evaluation on test set...
+2025-05-30 00:54:52,958 - SentimentAnalysis - INFO - Best model: hard_voting
+2025-05-30 00:54:53,886 - SentimentAnalysis - INFO - Performing cross-validation on full dataset...
+2025-05-30 00:54:57,582 - SentimentAnalysis - INFO - Saving models and results...
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - ============================================================
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - FINAL RESULTS SUMMARY
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - ============================================================
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - Best Model: hard_voting
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - Best Validation F1 Score: 0.7821
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - Test F1 Score: 0.8149
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - Test Accuracy: 0.8150
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - Cross-validation F1: 0.8201 ± 0.0222
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - Total Features Used: 677
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - Models Saved to: /Users/mohitkumar/Desktop/projects/text-sentiment-analysis/models
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - Logs Saved to: /Users/mohitkumar/Desktop/projects/text-sentiment-analysis/logs
+2025-05-30 00:54:57,610 - SentimentAnalysis - INFO - ============================================================
+2025-05-30 00:55:05,087 - SentimentAnalysis - INFO - Pipeline completed successfully!

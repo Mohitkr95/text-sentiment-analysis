@@ -1,0 +1,71 @@
+2025-05-30 00:54:38,823 - FeatureExtractor - INFO - Fitting feature extractor and transforming texts...
+2025-05-30 00:54:38,828 - FeatureExtractor - INFO - Extracted 667 TF-IDF features
+2025-05-30 00:54:38,828 - FeatureExtractor - INFO - Performing feature selection...
+2025-05-30 00:54:38,830 - FeatureExtractor - INFO - Selected 667 best features
+2025-05-30 00:54:38,831 - FeatureExtractor - INFO - Extracted 10 additional features
+2025-05-30 00:54:38,832 - FeatureExtractor - INFO - Final feature matrix shape: (640, 677)
+2025-05-30 00:54:38,836 - EnsembleModels - INFO - Training individual models...
+2025-05-30 00:54:38,836 - EnsembleModels - INFO - Applying SMOTE to handle class imbalance...
+2025-05-30 00:54:38,837 - EnsembleModels - INFO - Original training set size: 640
+2025-05-30 00:54:38,837 - EnsembleModels - INFO - Balanced training set size: 640
+2025-05-30 00:54:38,838 - EnsembleModels - INFO - Training logistic_regression...
+2025-05-30 00:54:39,789 - EnsembleModels - INFO - Best params for logistic_regression: {'C': 10.0, 'penalty': 'l2', 'solver': 'liblinear'}
+2025-05-30 00:54:39,798 - EnsembleModels - INFO - === logistic_regression Performance ===
+2025-05-30 00:54:39,798 - EnsembleModels - INFO - accuracy: 0.7750
+2025-05-30 00:54:39,798 - EnsembleModels - INFO - f1_score: 0.7722
+2025-05-30 00:54:39,798 - EnsembleModels - INFO - ====================================
+2025-05-30 00:54:39,798 - EnsembleModels - INFO - Training random_forest...
+2025-05-30 00:54:41,816 - EnsembleModels - INFO - Best params for random_forest: {'max_depth': None, 'min_samples_split': 2, 'n_estimators': 200}
+2025-05-30 00:54:41,842 - EnsembleModels - INFO - === random_forest Performance ===
+2025-05-30 00:54:41,842 - EnsembleModels - INFO - accuracy: 0.7562
+2025-05-30 00:54:41,842 - EnsembleModels - INFO - f1_score: 0.7383
+2025-05-30 00:54:41,842 - EnsembleModels - INFO - ==============================
+2025-05-30 00:54:41,842 - EnsembleModels - INFO - Training svm...
+2025-05-30 00:54:46,307 - EnsembleModels - INFO - Best params for svm: {'C': 1.0, 'gamma': 'scale', 'kernel': 'linear'}
+2025-05-30 00:54:46,320 - EnsembleModels - INFO - === svm Performance ===
+2025-05-30 00:54:46,320 - EnsembleModels - INFO - accuracy: 0.7562
+2025-05-30 00:54:46,320 - EnsembleModels - INFO - f1_score: 0.7516
+2025-05-30 00:54:46,320 - EnsembleModels - INFO - ====================
+2025-05-30 00:54:46,320 - EnsembleModels - INFO - Training multinomial_nb...
+2025-05-30 00:54:46,461 - EnsembleModels - INFO - Best params for multinomial_nb: {'alpha': 0.5}
+2025-05-30 00:54:46,463 - EnsembleModels - INFO - === multinomial_nb Performance ===
+2025-05-30 00:54:46,464 - EnsembleModels - INFO - accuracy: 0.7625
+2025-05-30 00:54:46,464 - EnsembleModels - INFO - f1_score: 0.7595
+2025-05-30 00:54:46,464 - EnsembleModels - INFO - ===============================
+2025-05-30 00:54:46,464 - EnsembleModels - INFO - Training knn...
+2025-05-30 00:54:46,690 - EnsembleModels - INFO - Best params for knn: {'n_neighbors': 9, 'weights': 'uniform'}
+2025-05-30 00:54:46,846 - EnsembleModels - INFO - === knn Performance ===
+2025-05-30 00:54:46,846 - EnsembleModels - INFO - accuracy: 0.5375
+2025-05-30 00:54:46,847 - EnsembleModels - INFO - f1_score: 0.5375
+2025-05-30 00:54:46,847 - EnsembleModels - INFO - ====================
+2025-05-30 00:54:46,847 - EnsembleModels - INFO - Training balanced_rf...
+2025-05-30 00:54:47,662 - EnsembleModels - INFO - Best params for balanced_rf: {'max_depth': None, 'n_estimators': 100}
+2025-05-30 00:54:47,675 - EnsembleModels - INFO - === balanced_rf Performance ===
+2025-05-30 00:54:47,675 - EnsembleModels - INFO - accuracy: 0.7812
+2025-05-30 00:54:47,676 - EnsembleModels - INFO - f1_score: 0.7742
+2025-05-30 00:54:47,676 - EnsembleModels - INFO - ============================
+2025-05-30 00:54:47,676 - EnsembleModels - INFO - Training balanced_bagging...
+2025-05-30 00:54:48,495 - EnsembleModels - INFO - Best params for balanced_bagging: {'max_samples': 1.0, 'n_estimators': 50}
+2025-05-30 00:54:48,521 - EnsembleModels - INFO - === balanced_bagging Performance ===
+2025-05-30 00:54:48,521 - EnsembleModels - INFO - accuracy: 0.7500
+2025-05-30 00:54:48,521 - EnsembleModels - INFO - f1_score: 0.7183
+2025-05-30 00:54:48,521 - EnsembleModels - INFO - =================================
+2025-05-30 00:54:48,521 - EnsembleModels - INFO - Creating ensemble models...
+2025-05-30 00:54:48,684 - EnsembleModels - INFO - Using top 5 models for ensemble
+2025-05-30 00:54:52,607 - EnsembleModels - INFO - === hard_voting Performance ===
+2025-05-30 00:54:52,608 - EnsembleModels - INFO - f1_score: 0.7821
+2025-05-30 00:54:52,608 - EnsembleModels - INFO - accuracy: 0.7875
+2025-05-30 00:54:52,608 - EnsembleModels - INFO - ============================
+2025-05-30 00:54:52,667 - EnsembleModels - INFO - === soft_voting Performance ===
+2025-05-30 00:54:52,667 - EnsembleModels - INFO - f1_score: 0.7436
+2025-05-30 00:54:52,667 - EnsembleModels - INFO - accuracy: 0.7500
+2025-05-30 00:54:52,667 - EnsembleModels - INFO - ============================
+2025-05-30 00:54:53,886 - FeatureExtractor - INFO - Fitting feature extractor and transforming texts...
+2025-05-30 00:54:53,894 - FeatureExtractor - INFO - Extracted 996 TF-IDF features
+2025-05-30 00:54:53,894 - FeatureExtractor - INFO - Performing feature selection...
+2025-05-30 00:54:53,895 - FeatureExtractor - INFO - Selected 996 best features
+2025-05-30 00:54:53,898 - FeatureExtractor - INFO - Extracted 10 additional features
+2025-05-30 00:54:53,900 - FeatureExtractor - INFO - Final feature matrix shape: (1000, 1006)
+2025-05-30 00:54:57,285 - EnsembleModels - INFO - Cross-validation F1 score: 0.8201 (+/- 0.0444)
+2025-05-30 00:54:57,607 - EnsembleModels - INFO - Best model saved to /Users/mohitkumar/Desktop/projects/text-sentiment-analysis/models/best_model_hard_voting.pkl
+2025-05-30 00:54:57,608 - FeatureExtractor - INFO - Feature extractor saved to /Users/mohitkumar/Desktop/projects/text-sentiment-analysis/models/feature_extractor.pkl
